@@ -17,11 +17,12 @@ const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/images/herosection/image1.jpg",
-    "/images/herosection/image2.jpg",
-    "/images/herosection/image3.jpg",
+    "/images/herosection/image1.JPG",
+    "/images/herosection/image2.JPG",
+    "/images/herosection/image3.JPG",
     "/images/herosection/image4.jpeg",
   ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
@@ -55,15 +56,15 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="lg:py-2 relative overflow-hidden">
+    <section className="py-8 lg:py-8 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
-        {/* Text Content - Now takes 6 columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 relative z-10">
+        {/* Text Content - 6 columns */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -73,7 +74,7 @@ const HeroSection = () => {
           {/* Greeting Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 backdrop-blur-sm border border-primary-500/30 rounded-full px-4 py-2 mb-6"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 backdrop-blur-sm border border-primary-500/30 rounded-full px-4 py-2 mb-4"
           >
             <SparklesIcon className="w-5 h-5 text-primary-400" />
             <span className="text-sm text-primary-300 font-medium">
@@ -84,7 +85,7 @@ const HeroSection = () => {
           {/* Main Heading */}
           <motion.h1
             variants={itemVariants}
-            className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight"
+            className="text-white mb-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight"
           >
             <span className="block mb-2">
               Hi, I'm{" "}
@@ -95,9 +96,9 @@ const HeroSection = () => {
           </motion.h1>
 
           {/* Dynamic Typing Section */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <div className="flex items-center justify-center lg:justify-start gap-3 text-2xl sm:text-3xl lg:text-4xl font-bold">
-              <CodeBracketIcon className="w-8 h-8 lg:w-10 lg:h-10 text-primary-400" />
+          <motion.div variants={itemVariants} className="mb-4">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-xl sm:text-2xl lg:text-3xl font-bold">
+              <CodeBracketIcon className="w-6 h-6 lg:w-8 lg:h-8 text-primary-400" />
               <span className="text-white">Passionate about</span>
             </div>
             <TypeAnimation
@@ -112,14 +113,14 @@ const HeroSection = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-500 text-3xl sm:text-4xl lg:text-5xl font-bold mt-2"
+              className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-500 text-2xl sm:text-3xl lg:text-4xl font-bold mt-2"
             />
           </motion.div>
 
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-[#ADB7BE] text-sm sm:text-base lg:text-lg mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
           >
             Final year Computer Science student at{" "}
             <span className="text-primary-400 font-semibold">IIIT Sricity</span>
@@ -131,11 +132,11 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
           >
             <Link
               href="#contact"
-              className="group px-8 py-4 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary-500/50 flex items-center justify-center gap-2"
+              className="group px-6 py-3 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary-500/50 flex items-center justify-center gap-2"
             >
               <RocketLaunchIcon className="w-5 h-5 group-hover:animate-bounce" />
               Let's Work Together
@@ -143,7 +144,7 @@ const HeroSection = () => {
             <Link
               href="/resume.pdf"
               download
-              className="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 hover:bg-primary-500/10 font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+              className="px-6 py-3 rounded-lg border-2 border-primary-500 text-primary-400 hover:bg-primary-500/10 font-semibold text-base transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
             >
               <svg
                 className="w-5 h-5"
@@ -163,21 +164,21 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Carousel - Now takes 6 columns with increased width */}
+        {/* Image Carousel - 6 columns with REDUCED height */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="col-span-1 lg:col-span-6 place-self-center mt-8 lg:mt-0"
+          className="col-span-1 lg:col-span-6 place-self-center mt-4 lg:mt-0"
         >
           <div className="relative">
             {/* Decorative Elements */}
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary-500/20 rounded-lg blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary-500/20 rounded-lg blur-xl"></div>
 
-            {/* Image Container - Increased width */}
+            {/* Image Container - REDUCED HEIGHT */}
             <div className="relative rounded-2xl bg-gradient-to-br from-primary-500/20 to-secondary-500/20 p-1 backdrop-blur-sm">
-              <div className="rounded-xl bg-[#181818] w-[320px] h-[320px] sm:w-[450px] sm:h-[580px] lg:w-[550px] lg:h-[600px] relative overflow-hidden shadow-2xl">
+              <div className="rounded-xl bg-[#181818] w-[280px] h-[320px] sm:w-[380px] sm:h-[450px] lg:w-[450px] lg:h-[500px] relative overflow-hidden shadow-2xl">
                 {images.map((image, index) => (
                   <Image
                     key={index}
@@ -186,8 +187,8 @@ const HeroSection = () => {
                     className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
                       index === currentImageIndex ? "opacity-100" : "opacity-0"
                     }`}
-                    width={550}
-                    height={700}
+                    width={450}
+                    height={500}
                     priority={index === 0}
                   />
                 ))}
@@ -196,15 +197,15 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-60"></div>
 
                 {/* Navigation Dots */}
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full">
                   {images.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`transition-all duration-300 rounded-full ${
                         index === currentImageIndex
-                          ? "w-8 h-3 bg-primary-500"
-                          : "w-3 h-3 bg-gray-500 hover:bg-gray-400"
+                          ? "w-6 h-2.5 bg-primary-500"
+                          : "w-2.5 h-2.5 bg-gray-500 hover:bg-gray-400"
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -212,26 +213,26 @@ const HeroSection = () => {
                 </div>
 
                 {/* Image Counter */}
-                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white text-sm font-medium">
+                <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium">
                   {currentImageIndex + 1} / {images.length}
                 </div>
               </div>
             </div>
 
-            {/* Floating Icons */}
+            {/* Floating Icons - Smaller */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute top-10 -right-6 bg-gradient-to-br from-primary-500 to-secondary-500 p-3 rounded-lg shadow-lg hidden lg:block"
+              className="absolute top-8 -right-4 bg-gradient-to-br from-primary-500 to-secondary-500 p-2.5 rounded-lg shadow-lg hidden lg:block"
             >
-              <CodeBracketIcon className="w-6 h-6 text-white" />
+              <CodeBracketIcon className="w-5 h-5 text-white" />
             </motion.div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-              className="absolute bottom-20 -left-6 bg-gradient-to-br from-secondary-500 to-primary-500 p-3 rounded-lg shadow-lg hidden lg:block"
+              className="absolute bottom-16 -left-4 bg-gradient-to-br from-secondary-500 to-primary-500 p-2.5 rounded-lg shadow-lg hidden lg:block"
             >
-              <SparklesIcon className="w-6 h-6 text-white" />
+              <SparklesIcon className="w-5 h-5 text-white" />
             </motion.div>
           </div>
         </motion.div>

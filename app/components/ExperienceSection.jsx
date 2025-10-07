@@ -30,7 +30,7 @@ const experiences = [
     company: "SERB (Science and Engineering Research Board)",
     description:
       "Developed a full-stack web platform using Next.js and FastAPI, integrating 5+ deep learning models for real-time biological sequence predictions with scalable, modular backend workflows.",
-    skills: ["Next.js", "Node.js", "OCR", "Enterprise AI"],
+    skills: ["Next.js", "Node.js", "FastAPI", "Deep Learning"],
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
         <path
@@ -58,36 +58,39 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-16 relative overflow-hidden">
+    <section
+      id="experience"
+      className="py-8 sm:py-12 md:py-16 relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        <div className="absolute top-20 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
             My{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500">
               Experience
             </span>
           </h2>
-          <p className="text-[#ADB7BE] text-lg max-w-2xl mx-auto">
+          <p className="text-[#ADB7BE] text-base sm:text-lg max-w-2xl mx-auto px-4">
             A journey through my professional experiences and contributions to
             various organizations
           </p>
         </motion.div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Vertical line with gradient */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500 md:transform md:-translate-x-1/2"></div>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical line with gradient - Responsive positioning */}
+          <div className="absolute left-4 sm:left-6 md:left-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500 md:-translate-x-1/2"></div>
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -96,41 +99,45 @@ const ExperienceSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative mb-16 ${
-                index % 2 === 0 ? "md:mr-auto md:pr-12" : "md:ml-auto md:pl-12"
-              } md:w-1/2 pl-16 md:pl-0`}
+              className={`relative mb-8 sm:mb-12 md:mb-16 ${
+                index % 2 === 0
+                  ? "md:mr-auto md:pr-8 lg:pr-12"
+                  : "md:ml-auto md:pl-8 lg:pl-12"
+              } md:w-1/2 pl-12 sm:pl-16 md:pl-0`}
             >
-              {/* Animated timeline dot */}
+              {/* Animated timeline dot - Responsive sizing and positioning */}
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.2 + 0.3 }}
-                className={`absolute top-6 w-6 h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full border-4 border-[#121212] shadow-lg ${
+                className={`absolute top-4 sm:top-6 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full border-2 sm:border-3 md:border-4 border-[#121212] shadow-lg ${
                   index % 2 === 0
-                    ? "left-[26px] md:left-auto md:right-[-12px]"
-                    : "left-[26px] md:left-[-12px]"
+                    ? "left-[10px] sm:left-[18px] md:left-auto md:right-[-10px] lg:right-[-12px]"
+                    : "left-[10px] sm:left-[18px] md:left-[-10px] lg:left-[-12px]"
                 }`}
               >
                 <div className="absolute inset-0 bg-primary-500 rounded-full animate-ping opacity-20"></div>
               </motion.div>
 
-              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#181818] rounded-xl p-6 border border-[#33353F] hover:border-primary-500/50 transition-all duration-300 shadow-lg hover:shadow-primary-500/20 hover:scale-105">
-                {/* Header with icon */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-gradient-to-br from-primary-500/20 to-secondary-500/20 p-3 rounded-lg border border-primary-500/30">
-                    <div className="text-primary-400">{exp.icon}</div>
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#181818] rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-[#33353F] hover:border-primary-500/50 transition-all duration-300 shadow-lg hover:shadow-primary-500/20 hover:scale-[1.02] md:hover:scale-105">
+                {/* Header with icon - Responsive layout */}
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="bg-gradient-to-br from-primary-500/20 to-secondary-500/20 p-2 sm:p-3 rounded-lg border border-primary-500/30 shrink-0">
+                    <div className="text-primary-400 w-5 h-5 sm:w-6 sm:h-6">
+                      {exp.icon}
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <span className="inline-block px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-semibold rounded-full border border-primary-500/30 mb-2">
+                  <div className="flex-1 w-full">
+                    <span className="inline-block px-2 sm:px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-semibold rounded-full border border-primary-500/30 mb-2">
                       {exp.year}
                     </span>
-                    <h3 className="text-white text-2xl font-bold">
+                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-tight">
                       {exp.title}
                     </h3>
-                    <h4 className="text-secondary-400 text-lg font-semibold mt-1 flex items-center gap-2">
+                    <h4 className="text-secondary-400 text-sm sm:text-base md:text-lg font-semibold mt-1 flex items-center gap-2">
                       <svg
-                        className="w-4 h-4"
+                        className="w-3 h-3 sm:w-4 sm:h-4 shrink-0"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -140,22 +147,22 @@ const ExperienceSection = () => {
                           clipRule="evenodd"
                         />
                       </svg>
-                      {exp.company}
+                      <span className="break-words">{exp.company}</span>
                     </h4>
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-[#ADB7BE] leading-relaxed mb-4">
+                {/* Description - Responsive text sizing */}
+                <p className="text-[#ADB7BE] text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
                   {exp.description}
                 </p>
 
-                {/* Skills tags */}
-                <div className="flex flex-wrap gap-2">
+                {/* Skills tags - Responsive sizing */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {exp.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-secondary-500/10 text-secondary-300 text-sm rounded-md border border-secondary-500/30 hover:bg-secondary-500/20 transition-colors"
+                      className="px-2 sm:px-3 py-1 bg-secondary-500/10 text-secondary-300 text-xs sm:text-sm rounded-md border border-secondary-500/30 hover:bg-secondary-500/20 transition-colors"
                     >
                       {skill}
                     </span>
