@@ -123,7 +123,7 @@ const TAB_DATA = [
 
         {/* LeetCode Profile */}
         <a
-          href="https://leetcode.com/yourusername"
+          href="https://leetcode.com/u/Mira_93/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#181818] rounded-lg p-4 hover:bg-[#1f1f1f] transition-all block group border border-transparent hover:border-secondary-500/30"
