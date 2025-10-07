@@ -48,7 +48,7 @@ const projectsData = [
     image: "/images/projects/portfolio.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/sameera9304/sameera-portfolio-website",
-    previewUrl: "/",
+    previewUrl: "https://sameera-portfolio-website.vercel.app/",
     featured: false,
   },
   {

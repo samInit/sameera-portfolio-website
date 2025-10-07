@@ -349,8 +349,8 @@ const AboutSection = () => {
                 <div className="flex items-start gap-3">
                   <span className="text-primary-400 mt-1">▹</span>
                   <p className="text-[#ADB7BE]">
-                    Contributing to open-source projects and collaborative
-                    development
+                    Mastering Low-Level Design and software architecture for
+                    building maintainable systems
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -377,7 +377,7 @@ const AboutSection = () => {
               </h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-2 bg-secondary-500/20 text-secondary-300 rounded-lg text-sm border border-secondary-500/30 hover:bg-secondary-500/30 transition-colors">
-                  Advanced Next.js Patterns
+                  Low Level Design
                 </span>
                 <span className="px-3 py-2 bg-secondary-500/20 text-secondary-300 rounded-lg text-sm border border-secondary-500/30 hover:bg-secondary-500/30 transition-colors">
                   Microservices Architecture
@@ -386,7 +386,7 @@ const AboutSection = () => {
                   System Design
                 </span>
                 <span className="px-3 py-2 bg-secondary-500/20 text-secondary-300 rounded-lg text-sm border border-secondary-500/30 hover:bg-secondary-500/30 transition-colors">
-                  Cloud Native Development
+                  Java Development (SpringBoot)
                 </span>
               </div>
             </div>
